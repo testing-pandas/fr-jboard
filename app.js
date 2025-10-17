@@ -12,24 +12,24 @@ import fetch from 'node-fetch';
 // ========================================
 // VARIABLES D’ENVIRONNEMENT
 // ========================================
-const PORT = Number(process.env.PORT || 3000);
+const PORT = Number(process.env.PORT || 3002);
 const SITE_URL = (process.env.SITE_URL || `http://localhost:${PORT}`).replace(/\/+$/,'');
-const SITE_NAME = process.env.SITE_NAME || 'Emplois Conducteur Routier';
+const SITE_NAME = process.env.SITE_NAME || 'Emplois chauffeur';
 const FAVICON_URL = process.env.FAVICON_URL || '';
 const SITE_LOGO = process.env.SITE_LOGO || '';
 const SITE_SAMEAS = process.env.SITE_SAMEAS || ''; // URLs sociales séparées par des virgules
 const TARGET_LANG = process.env.TARGET_LANG || 'fr';
 const FEED_URL = process.env.Feed_URL || process.env.FEED_URL || '';
-const MAX_JOBS = Number(process.env.MAX_JOBS || 50000);
+const MAX_JOBS = Number(process.env.MAX_JOBS || 1000);
 const CRON_SCHEDULE = process.env.CRON_SCHEDULE || '0 */6 * * *';
 const HAS_OPENAI = !!process.env.OPENAI_API_KEY;
 const CLICK_SECRET = process.env.CLICK_SECRET || crypto.randomBytes(16).toString('hex');
 const TARGET_PROFESSION = process.env.TARGET_PROFESSION || 'conducteur routier';
-const AI_PROCESS_LIMIT = Number(process.env.AI_PROCESS_LIMIT || 0); // 0 = illimité
+const AI_PROCESS_LIMIT = Number(process.env.AI_PROCESS_LIMIT || 1000); // 0 = illimité
 
 // Mots-clés (minuscule)
 const PROFESSION_KEYWORDS = (process.env.PROFESSION_KEYWORDS ||
-  'conducteur routier,chauffeur poids lourd,chauffeur spl,poids lourds,super poids lourd,permIs ce,permis c,fimo,fco,adr,matières dangereuses,semi-remorque,distribution,livraison,regional,national,international,travail de nuit,grumier,citerne,plateau,frigo,bâché')
+  'chauffeur de camion, chauffeur routier, chauffeur professionnel, chauffeur longue distance, chauffeur de camion, chauffeur de semi-remorque, chauffeur CE')
   .toLowerCase()
   .split(',')
   .map(s => s.trim())
