@@ -12,7 +12,7 @@ import fetch from 'node-fetch';
 // ========================================
 // VARIABLES D’ENVIRONNEMENT
 // ========================================
-const PORT = Number(process.env.PORT || 3002);
+const PORT = Number(process.env.PORT || 3003);
 const SITE_URL = (process.env.SITE_URL || `http://localhost:${PORT}`).replace(/\/+$/,'');
 const SITE_NAME = process.env.SITE_NAME || 'Emplois chauffeur';
 const FAVICON_URL = process.env.FAVICON_URL || '';
@@ -1620,3 +1620,4 @@ app.listen(PORT, () => {
   console.log(`Offres tot. : ${getCachedCount().toLocaleString('fr-FR')}`);
   console.log('='.repeat(60) + '\n');
 });
+
